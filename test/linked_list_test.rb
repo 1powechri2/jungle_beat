@@ -3,23 +3,40 @@ require './lib/linked_list'
 
 class LinkedListTest < Minitest::Test
   def setup
-    @ll = LinkedList.new
+    @list = LinkedList.new
   end
 
   def test_linked_list_exists
-    assert_instance_of LinkedList, @ll
+    assert_instance_of LinkedList, @list
   end
 
   def test_list_has_a_head
-    assert @ll.head.nil?
+    assert @list.head.nil?
   end
 
   def test_append_method
-    head        = @ll.append("flurp")
-    first_link  = @ll.append("blorb")
-    second_link = @ll.append("lick")
-    third_link  = @ll.append("corn")
-    assert_equal "flurp", @ll.head.data
-    assert_equal "blorb", @ll.head.next_node.data
+    head        = @list.append("boom")
+    first_link  = @list.append("tick")
+    second_link = @list.append("bap")
+    third_link  = @list.append("tick")
+    assert_equal "boom", @list.head.data
+    assert_equal "tick", @list.head.next_node.data
+    assert_equal "bap",  @list.head.next_node.next_node.data
+    assert_equal "tick", @list.head.next_node.next_node.next_node.data
+  end
+
+  def test_list_count
+    head        = @list.append("boom")
+    first_link  = @list.append("tick")
+    second_link = @list.append("bap")
+    assert_equal 3, @list.count_nodes
+  end
+
+  def test_list_to_string
+    head        = @list.append("boom")
+    assert_equal "boom", @list.to_string
+    first_link  = @list.append("tick")
+    assert_equal "tick", @list.to_string
+    binding.pry
   end
 end
