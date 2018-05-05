@@ -42,10 +42,19 @@ class LinkedList
   # end
 
   def to_string(current_node = @head)
-    until current_node == nil
+    if current_node != nil
       @string += current_node.data + " "
-      current_node = current_node.next_node
+      next_node = current_node.next_node
+      to_string(next_node)
     end
     @string.chop
   end
+
+  # def to_string(current_node = @head)
+  #   until current_node == nil
+  #     @string += current_node.data + " "
+  #     current_node = current_node.next_node
+  #   end
+  #   @string.chop
+  # end
 end
