@@ -34,9 +34,7 @@ class LinkedListTest < Minitest::Test
 
   def test_list_to_string
     head        = @list.append("boom")
-    assert_equal "boom", @list.to_string
     first_link  = @list.append("tick")
-    assert_equal "tick", @list.to_string
-    binding.pry
+    assert_equal "boom tick", @list.to_string
   end
 end

@@ -1,11 +1,13 @@
 require './lib/node'
 
 class LinkedList
-  attr_reader :head
+  attr_reader :head,
+              :string
 
   def initialize
     @head = nil
     @counter = 0
+    @string = ""
   end
 
   def append(data, current_node = @head)
@@ -30,7 +32,7 @@ class LinkedList
     end
   end
 
-  # Below is the iterative technique
+  # lines 34 -40 are the iterative technique
   # def count_nodes(current_node = @head)
   #   until current_node == nil
   #     @counter += 1
@@ -39,10 +41,11 @@ class LinkedList
   #   @counter
   # end
 
-  def to_string(current_node= @head)
-    until current_node.next_node == nil
+  def to_string(current_node = @head)
+    until current_node == nil
+      @string += current_node.data + " "
       current_node = current_node.next_node
     end
-    current_node.data
+    @string.chop
   end
 end
