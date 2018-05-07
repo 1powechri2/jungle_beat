@@ -22,6 +22,17 @@ class LinkedList
     end
   end
 
+  # def append(data)
+  #   if @head == nil
+  #     @head = Node.new(data)
+  #   else
+  #     current_node = Node.new(data)
+  #     until current_node == nil
+  #       current_node = current_node.next_node
+  #     end
+  #   end
+  # end
+
   def count_nodes(current_node = @head)
     if current_node == nil
       @counter
@@ -33,13 +44,13 @@ class LinkedList
   end
 
   # lines 34 -40 are the iterative technique
-  # def count_nodes(current_node = @head)
-  #   until current_node == nil
-  #     @counter += 1
-  #     current_node = current_node.next_node
-  #   end
-  #   @counter
-  # end
+  def count_nodes(current_node = @head)
+    until current_node == nil
+      @counter += 1
+      current_node = current_node.next_node
+    end
+    @counter
+  end
 
   def to_string(current_node = @head)
     if current_node != nil
@@ -50,11 +61,13 @@ class LinkedList
     @string.chop
   end
 
-  # def to_string(current_node = @head)
-  #   until current_node == nil
-  #     @string += current_node.data + " "
-  #     current_node = current_node.next_node
-  #   end
-  #   @string.chop
-  # end
+  def to_string(current_node = @head)
+    until current_node == nil
+      @string += current_node.data + " "
+      current_node = current_node.next_node
+    end
+    @string.chop
+  end
+   def lkhjdfkhjadf
+   end 
 end
