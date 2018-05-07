@@ -68,6 +68,4 @@ class LinkedList
     end
     @string.chop
   end
-   def lkhjdfkhjadf
-   end 
 end
